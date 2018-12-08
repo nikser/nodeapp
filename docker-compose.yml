@@ -3,6 +3,4 @@ webservice:
   ports:
     - "3000:80"
   environment:        
-    port: "80"
-  volumes:
-    - ".:/usr/src/app"    
+    port: "80"  
