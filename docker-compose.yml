@@ -1,5 +1,5 @@
 webservice:
-  build: .  
+  image: "srcmaxim/nodeapp:latest"  
   ports:
     - "3000:80"
   environment:        

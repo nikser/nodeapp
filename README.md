@@ -3,14 +3,14 @@
 ## Building **nodeapp**
 
 To build **nodeapp** lockally with *Dockerfile*: 
-`$ sudo docker build srcmaxim/nodeapp:v1 .`
+`$ sudo docker build srcmaxim/nodeapp:latest .`
 
 ## Running **nodeapp**
 
 To start **nodeapp** use: `npm npm start`.
 
 To start  **nodeapp** locally with *Docker* you can use:
-`$ sudo docker run -d -p 3000:3000 srcmaxim/nodeapp:v1`
+`$ sudo docker run -d -p 3000:3000 srcmaxim/nodeapp:latest`
 
 Also you can build and run **nodeapp** using *Docker-compose*:
 ```
