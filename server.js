@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 app.get('/', function(req, res) {
-	res.json({'msg': 'hello word'})
+	res.json({'timestamp': new Date().toJSON()})
 });
 
 var port = process.env.port || 3000;
