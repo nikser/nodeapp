@@ -1,7 +1,12 @@
+/* JS features */
+Array.prototype.flatMap = function(f) {
+  return this.map(f).reduce((x,y) => x.concat(y), [])
+}
+
 /* Dependencies */
 const express = require("express");
 const bodyParser = require("body-parser");
-
+const Persons = require('./persons');
 
 /* Configuration */
 var app = express();
@@ -14,16 +19,10 @@ app.use(bodyParser.json());
 
 
 /* Application */
-let data = null;
-
-app.post("/", function (req, res) {
-	data = req.body;
-	console.log("Reseived data: " + JSON.stringify(req.body));
-	res.json({'data': data});
-});
-
-app.get("/", function(req, res) {
-	res.json({"data": data});
+app.get("/persons", function(req, res) {
+	const name = req.query.name;
+	const person = Persons.findPersonByName(name);
+	res.json(person);
 });
 
 /* Running */
